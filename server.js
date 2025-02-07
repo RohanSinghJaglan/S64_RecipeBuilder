@@ -1,14 +1,20 @@
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
 
-const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/ping', (req, res) => {
-    res.send('pong');
-    });
+// MongoDB Connection
+mongoose
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch((err) => console.log("MongoDB connection error:", err));
 
-app.listen(3000, () => {
-    console.log(`Server running at http://localhost:${3000}`);
-    
+// Home Route with DB Status
+app.get("/", (req, res) => {
+  const dbStatus = mongoose.connection.readyState === 1 ? "Connected" : "Not Connected";
+  res.json({ message: "Welcome to the ASAP Project!", databaseStatus: dbStatus });
 });
 
-
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
