@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "APiTesting",
+  "name": "Asap",
   "type": "collection",
   "ignore": [
     "node_modules",

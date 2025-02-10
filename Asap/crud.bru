@@ -1,0 +1,18 @@
+meta {
+  name: crud
+  type: http
+  seq: 2
+}
+
+delete {
+  url: http://localhost:3000/items/67a9cdd50af347eea1f7e20b
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Rohan",
+    "price": 1000
+  }
+}
