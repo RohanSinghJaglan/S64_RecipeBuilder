@@ -59,7 +59,7 @@ const LandingPage = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.7 }}
       >
-        {/* Made with ❤ by Cringe Enthusiasts */}
+        {/* Made with ❤ by Cringe Enthusiastsss */}
       </motion.p>
     </div>
   );

@@ -1,7 +1,8 @@
 import LandingPage from "./Pages/LandingPage";
 
-function App() {
+export default function App() {
   return <LandingPage />;
 }
 
-export default App;
+
+ 
